@@ -1,0 +1,537 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Crimson+Text:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-feature-settings: 'kern' 1, 'liga' 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #1e293b;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+header {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+header .logo-text {
+    font-family: 'Crimson Text', Georgia, 'Times New Roman', serif;
+    font-weight: 700;
+}
+
+/* New Header Design Styles */
+#main-header {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999 !important;
+    width: 100%;
+}
+
+.header-wrapper {
+    width: 100%;
+}
+
+/* Top Contact Bar - New Design */
+.header-top-bar-new {
+    background-color: #1e293b;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.header-scrolled .header-top-bar-new {
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+    border-bottom: none;
+}
+
+/* Main Navigation Bar - New Design */
+.header-main-nav-new {
+    background-color: #ffffff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.header-scrolled .header-main-nav-new {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo - New Design */
+.logo-text-new {
+    font-family: 'Crimson Text', Georgia, 'Times New Roman', serif;
+    font-weight: 700;
+    color: #1e293b;
+    letter-spacing: -0.02em;
+}
+
+/* Navigation Links - New Design */
+.header-nav-link-new {
+    position: relative;
+    color: #475569;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.header-nav-link-new:hover {
+    color: #1e293b;
+}
+
+.header-nav-link-new::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #8b2635;
+    transition: width 0.3s ease;
+}
+
+.header-nav-link-new:hover::after {
+    width: calc(100% - 2rem);
+}
+
+/* CTA Button - New Design */
+.header-cta-button-new {
+    transition: all 0.2s ease;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.header-cta-button-new:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(139, 38, 53, 0.4);
+}
+
+/* Dropdown - New Design */
+.nav-dropdown-new {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 0.5rem;
+    background-color: #ffffff;
+    min-width: 300px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    z-index: 10000;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.group:hover .nav-dropdown-new {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.nav-dropdown-item-new {
+    display: block;
+    padding: 0.75rem 1.25rem;
+    color: #475569;
+    text-decoration: none;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.nav-dropdown-item-new:hover {
+    background-color: #f8f9fa;
+    color: #1e293b;
+    border-left-color: #8b2635;
+    padding-left: 1.5rem;
+}
+
+.nav-dropdown-item-new:first-child {
+    padding-top: 1rem;
+}
+
+.nav-dropdown-item-new:last-child {
+    padding-bottom: 1rem;
+}
+
+.hero-bg {
+    background: url('What+Does+Esquire+Mean+for+Lawyers+Understanding+Legal+Titles+and+Their+Significance-1920w.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding-top: 140px; /* Account for fixed header height */
+    position: relative;
+}
+
+/* Dark overlay for better text contrast */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(30, 41, 59, 0.75) 0%,
+        rgba(15, 23, 42, 0.85) 50%,
+        rgba(30, 41, 59, 0.75) 100%
+    );
+    z-index: 1;
+}
+
+/* Enhanced text shadows for better readability */
+.hero-title {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5), 0 4px 16px rgba(0, 0, 0, 0.3);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+.hero-subtitle {
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), 0 2px 12px rgba(0, 0, 0, 0.3);
+    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.4));
+}
+
+@media (max-width: 768px) {
+    .hero-bg {
+        padding-top: 120px;
+    }
+}
+
+.practice-card img,
+.publication-card img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Navigation Dropdown Styles */
+.nav-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 0.5rem;
+    background-color: #1e293b;
+    min-width: 280px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    z-index: 10000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.group:hover .nav-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.nav-dropdown-item {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: white;
+    text-decoration: none;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.875rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-dropdown-item:first-child {
+    padding-top: 1rem;
+}
+
+.nav-dropdown-item:last-child {
+    padding-bottom: 1rem;
+}
+
+/* Practices Section Styles */
+.practices-section {
+    background-color: #ffffff;
+    position: relative;
+}
+
+.practices-geometric-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 400px;
+    background: 
+        linear-gradient(135deg, rgba(139, 38, 53, 0.08) 0%, transparent 60%),
+        linear-gradient(45deg, rgba(139, 38, 53, 0.05) 0%, transparent 60%);
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    z-index: 1;
+}
+
+.practices-title {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+
+.practices-intro {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 400;
+}
+
+.practice-card-custom {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.practice-card-custom:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.practice-card-custom img {
+    border-radius: 8px 8px 0 0;
+}
+
+.practice-image-blur {
+    filter: blur(1.5px);
+}
+
+/* Why Choose Us Section Styles */
+.why-choose-us-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.why-choose-us-section .grid {
+    align-items: stretch;
+    min-height: 700px;
+}
+
+.why-choose-us-image-container {
+    position: relative;
+    min-height: 700px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.why-choose-us-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 0;
+}
+
+.why-choose-us-image-container:hover .why-choose-us-image {
+    transform: scale(1.08);
+}
+
+.why-choose-us-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.15) 0%, transparent 60%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.why-choose-us-geometric-pattern {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 280px;
+    background: 
+        linear-gradient(135deg, rgba(139, 38, 53, 0.08) 0%, transparent 60%),
+        linear-gradient(45deg, rgba(139, 38, 53, 0.05) 0%, transparent 60%);
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+    opacity: 0.6;
+    z-index: 1;
+}
+
+.why-choose-us-top-bg {
+    position: relative;
+    background-color: #1e293b;
+    overflow: hidden;
+    flex: 0 0 35%;
+}
+
+.why-choose-us-bottom-bg {
+    position: relative;
+    background-color: #ffffff;
+    flex: 1;
+}
+
+.why-choose-us-top-section {
+    min-height: 245px;
+}
+
+.why-choose-us-bottom-section {
+    min-height: 455px;
+}
+
+.why-choose-us-heading {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+
+.why-choose-us-intro {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.why-choose-us-block {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    padding: 0.75rem;
+    border-radius: 6px;
+    position: relative;
+}
+
+.why-choose-us-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.03) 0%, transparent 100%);
+    border-radius: 6px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+}
+
+.why-choose-us-block:hover::before {
+    opacity: 1;
+}
+
+.why-choose-us-block:hover {
+    transform: translateY(-3px);
+}
+
+.why-choose-us-block > * {
+    position: relative;
+    z-index: 1;
+}
+
+.why-choose-us-block h3 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.why-choose-us-block:hover h3 {
+    color: #1e293b;
+}
+
+.why-choose-us-block p {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+/* Icon animations */
+.why-choose-us-block svg {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease;
+}
+
+.why-choose-us-block:hover svg {
+    transform: scale(1.1);
+}
+
+/* Ensure right side flex column fills height */
+.why-choose-us-section .grid > div:last-child {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+@media (min-width: 1024px) {
+    .why-choose-us-section .grid {
+        min-height: 700px;
+    }
+    
+    .why-choose-us-image-container {
+        min-height: 700px;
+        height: 100%;
+    }
+    
+    .why-choose-us-top-section {
+        min-height: 245px;
+    }
+    
+    .why-choose-us-bottom-section {
+        min-height: 455px;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1023px) {
+    .why-choose-us-section .grid {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+    
+    .why-choose-us-image-container {
+        min-height: 400px;
+        height: 400px;
+    }
+    
+    .why-choose-us-image {
+        position: relative;
+        height: 100%;
+    }
+    
+    .why-choose-us-top-section {
+        min-height: auto;
+        padding: 2rem 1.5rem !important;
+    }
+    
+    .why-choose-us-bottom-section {
+        min-height: auto;
+        padding: 1.5rem !important;
+    }
+    
+    .why-choose-us-geometric-pattern {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .why-choose-us-top-bg {
+        flex: none;
+    }
+    
+    .why-choose-us-bottom-bg {
+        flex: none;
+    }
+}
+
