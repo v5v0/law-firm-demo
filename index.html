@@ -133,14 +133,50 @@
                             </button>
                             
                             <!-- Mobile Menu Button -->
-                            <button id="mobile-menu-btn" class="lg:hidden text-navy p-2 hover:bg-beige rounded-md transition-colors">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <button id="mobile-menu-btn" class="lg:hidden text-navy p-2 hover:bg-beige rounded-md transition-colors" aria-label="Toggle mobile menu">
+                                <svg id="mobile-menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                                </svg>
+                                <svg id="mobile-menu-close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                                 </svg>
                             </button>
                         </div>
                     </div>
                 </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="lg:hidden mobile-menu-container">
+                <nav class="mobile-menu-nav">
+                    <a href="#" class="mobile-menu-link">ЗА КАНТОРАТА</a>
+                    <div class="mobile-menu-dropdown">
+                        <button class="mobile-menu-link mobile-menu-dropdown-toggle flex items-center justify-between w-full">
+                            <span>СФЕРИ НА ДЕЙНОСТ</span>
+                            <svg class="w-4 h-4 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                            </svg>
+                        </button>
+                        <div class="mobile-menu-dropdown-content">
+                            <a href="#" class="mobile-menu-dropdown-item">Търговско право</a>
+                            <a href="#" class="mobile-menu-dropdown-item">Събиране на вземания</a>
+                            <a href="#" class="mobile-menu-dropdown-item">Обезщетение за Вреди</a>
+                            <a href="#" class="mobile-menu-dropdown-item">Договорно право</a>
+                            <a href="#" class="mobile-menu-dropdown-item">Трудова миграция</a>
+                            <a href="#" class="mobile-menu-dropdown-item">Синя карта на ЕС</a>
+                            <a href="#" class="mobile-menu-dropdown-item">Европейско право</a>
+                            <a href="#" class="mobile-menu-dropdown-item">Защита на кредитополучателите</a>
+                            <a href="#" class="mobile-menu-dropdown-item">Изпълнително производство</a>
+                            <a href="#" class="mobile-menu-dropdown-item">Семейно право</a>
+                            <a href="#" class="mobile-menu-dropdown-item">Административно право</a>
+                            <a href="#" class="mobile-menu-dropdown-item">Процесуално представителство</a>
+                        </div>
+                    </div>
+                    <a href="#" class="mobile-menu-link">ПУБЛИКАЦИИ</a>
+                    <button class="mobile-menu-cta bg-burgundy text-white px-6 py-3 rounded-md hover:bg-burgundy-dark transition-all duration-200 text-sm font-semibold w-full mt-2">
+                        КОНТАКТИ
+                    </button>
+                </nav>
             </div>
         </div>
     </header>
@@ -150,13 +186,24 @@
         <!-- Dark Overlay for Better Text Readability -->
         <div class="hero-overlay"></div>
         <!-- Hero Content -->
-        <div class="flex-1 flex items-center py-32 relative z-10">
+        <div class="flex-1 flex items-center py-24 md:py-32 relative z-10">
             <div class="container mx-auto px-6">
-                <h1 class="text-5xl md:text-6xl font-bold mb-4 leading-tight hero-title">Адвокатска кантора 'Правни решения'</h1>
-                <p class="text-2xl md:text-3xl mb-8 font-light hero-subtitle">Вашият доверен правен партньор</p>
-                <button class="bg-burgundy px-8 py-4 rounded text-lg font-semibold hover:bg-burgundy-dark transition text-white">
-                    Заявете консултация
-                </button>
+                <div class="hero-content-wrapper">
+                    <!-- Main Title -->
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 leading-tight hero-title">
+                        Защитаваме вашите права с професионализъм и опит
+                    </h1>
+                    
+                    <!-- Subtitle -->
+                    <p class="text-lg md:text-xl mb-8 font-light hero-subtitle max-w-2xl">
+                        Вашият доверен правен партньор
+                    </p>
+                    
+                    <!-- CTA Button -->
+                    <button class="bg-burgundy px-8 py-4 rounded-md text-base font-semibold hover:bg-burgundy-dark transition-colors text-white">
+                        Заявете консултация
+                    </button>
+                </div>
             </div>
         </div>
     </section>
@@ -167,8 +214,8 @@
         <div class="container mx-auto px-6 relative z-10">
             <div class="grid md:grid-cols-2 gap-8 mb-12">
                 <div class="flex items-start">
-                    <div class="w-0.5 h-20 bg-burgundy mr-4 flex-shrink-0" style="width: 2px;"></div>
-                    <h2 class="text-4xl md:text-5xl font-bold text-black practices-title">Нашите практики</h2>
+                    <div class="w-0.5 h-10 md:h-12 bg-burgundy mr-4 flex-shrink-0" style="width: 2px;"></div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-black practices-title">Нашите практики</h2>
                 </div>
                 <div>
                     <p class="text-black text-lg leading-relaxed practices-intro">
@@ -179,41 +226,41 @@
             
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Practice Card 1: Търговско право -->
-                <div class="bg-white rounded-lg overflow-hidden practice-card-custom">
+                <div class="bg-white rounded-lg overflow-hidden practice-card-custom flex flex-col">
                     <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop" alt="Търговско право" class="w-full h-64 object-cover">
-                    <div class="p-6">
+                    <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold text-black mb-3">Търговско право</h3>
-                        <p class="text-black mb-4 text-sm leading-relaxed">Предоставяме правно съдействие на местни и чуждестранни търговски дружества както при стартиране на нов бизнес, така и във връзка с ежедневните нужди от консултиране</p>
+                        <p class="text-black mb-4 text-sm leading-relaxed flex-grow">Предоставяме правно съдействие на местни и чуждестранни търговски дружества както при стартиране на нов бизнес, така и във връзка с ежедневните нужди от консултиране</p>
                         <a href="#" class="text-burgundy font-semibold hover:text-burgundy-dark hover:underline inline-flex items-center">Научете повече</a>
                     </div>
                 </div>
                 
                 <!-- Practice Card 2: Събиране на вземания -->
-                <div class="bg-white rounded-lg overflow-hidden practice-card-custom">
+                <div class="bg-white rounded-lg overflow-hidden practice-card-custom flex flex-col">
                     <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=600&fit=crop" alt="Събиране на вземания" class="w-full h-64 object-cover practice-image-blur">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-burgundy mb-3">Събиране на вземания</h3>
-                        <p class="text-black mb-4 text-sm leading-relaxed">Екипът ни притежава богата експертиза в събирането на вземания на свои клиенти, като предлага извънсъдебно събиране, съдебни действия и принудително изпълнение</p>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-black mb-3">Събиране на вземания</h3>
+                        <p class="text-black mb-4 text-sm leading-relaxed flex-grow">Екипът ни притежава богата експертиза в събирането на вземания на свои клиенти, като предлага извънсъдебно събиране, съдебни действия и принудително изпълнение</p>
                         <a href="#" class="text-burgundy font-semibold hover:text-burgundy-dark hover:underline inline-flex items-center">Научете повече</a>
                     </div>
                 </div>
                 
                 <!-- Practice Card 3: Обезщетение за вреди -->
-                <div class="bg-white rounded-lg overflow-hidden practice-card-custom">
+                <div class="bg-white rounded-lg overflow-hidden practice-card-custom flex flex-col">
                     <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop" alt="Обезщетение за вреди" class="w-full h-64 object-cover">
-                    <div class="p-6">
+                    <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold text-black mb-3">Обезщетение за вреди</h3>
-                        <p class="text-black mb-4 text-sm leading-relaxed">Оказваме професионално правно съдействие и защита на пострадали при пътнотранспортно произшествие, трудова злополука, телесна повреда, инцидент на обществено място и други деликти</p>
+                        <p class="text-black mb-4 text-sm leading-relaxed flex-grow">Оказваме професионално правно съдействие и защита на пострадали при пътнотранспортно произшествие, трудова злополука, телесна повреда, инцидент на обществено място и други деликти</p>
                         <a href="#" class="text-burgundy font-semibold hover:text-burgundy-dark hover:underline inline-flex items-center">Научете повече</a>
                     </div>
                 </div>
                 
                 <!-- Practice Card 4: Договорно право -->
-                <div class="bg-white rounded-lg overflow-hidden practice-card-custom">
+                <div class="bg-white rounded-lg overflow-hidden practice-card-custom flex flex-col">
                     <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=600&fit=crop" alt="Договорно право" class="w-full h-64 object-cover">
-                    <div class="p-6">
+                    <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold text-black mb-3">Договорно право</h3>
-                        <p class="text-black mb-4 text-sm leading-relaxed">В областта на договорните отношения предоставяме правна помощ и съдействие при сключване, валидност, изпълнение, унищожаване, прекратяване и разваляне на различни видове договори</p>
+                        <p class="text-black mb-4 text-sm leading-relaxed flex-grow">В областта на договорните отношения предоставяме правна помощ и съдействие при сключване, валидност, изпълнение, унищожаване, прекратяване и разваляне на различни видове договори</p>
                         <a href="#" class="text-burgundy font-semibold hover:text-burgundy-dark hover:underline inline-flex items-center">Научете повече</a>
                     </div>
                 </div>
@@ -224,10 +271,10 @@
     <!-- Why Choose Us Section -->
     <section class="why-choose-us-section relative overflow-hidden">
         <div class="grid lg:grid-cols-2 gap-0">
-            <!-- Left Side: Ferris Wheel Image -->
+            <!-- Left Side: Law Library Image -->
             <div class="why-choose-us-image-container">
                 <div class="why-choose-us-image-overlay"></div>
-                <img src="https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=1200&h=1600&fit=crop&q=80" alt="Ferris Wheel" class="why-choose-us-image">
+                <img src="view-3d-justice-scales-scaled.webp" alt="Scales of Justice" class="why-choose-us-image">
             </div>
             
             <!-- Right Side: Text Content -->
@@ -238,7 +285,7 @@
                     <div class="relative z-10 px-6 md:px-10 lg:px-12 py-12 md:py-16 flex flex-col justify-center why-choose-us-top-section">
                         <div class="flex items-start mb-4">
                             <div class="w-0.5 h-12 bg-burgundy mr-3 flex-shrink-0"></div>
-                            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight why-choose-us-heading">
+                            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight why-choose-us-heading">
                                 Защо да изберете нас?
                             </h2>
                         </div>
@@ -251,106 +298,17 @@
                 <!-- White Background Section (Bottom 65%) -->
                 <div class="why-choose-us-bottom-bg bg-white relative">
                     <div class="px-6 md:px-10 lg:px-12 py-8 md:py-10 lg:py-12 why-choose-us-bottom-section">
-                        <div class="grid md:grid-cols-2 gap-6 md:gap-8">
-                            <!-- Content Block 1 -->
+                        <div class="max-w-4xl">
                             <div class="why-choose-us-block group">
-                                <div class="flex items-center mb-3">
-                                    <div class="w-10 h-10 rounded-lg bg-navy/5 flex items-center justify-center mr-3 group-hover:bg-burgundy/10 transition-all duration-300">
-                                        <svg class="w-5 h-5 text-navy group-hover:text-burgundy transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-                                        </svg>
-                                    </div>
-                                    <div class="w-6 h-px bg-burgundy"></div>
-                                </div>
-                                <h3 class="text-lg md:text-xl font-bold text-black mb-2.5 group-hover:text-navy transition-colors">
-                                    Лична отговорност към клиента
-                                </h3>
-                                <p class="text-text-secondary text-sm leading-relaxed">
-                                    Отнасяме се към всеки проблем като към свой собствен, защото вярваме, че намирането на ефективни решения не се свежда единствено до изпълнение на задълженията ни, а трябва да се основава на емпатия и откритост към Вашите потребности. Това не само подобрява качеството на правните съвети – то е ключът към изграждането на лоялност.
+                                <p class="text-text-secondary text-base md:text-lg leading-relaxed">
+                                    Избираме да работим с лична отговорност към всеки клиент, отнасяйки се към всеки проблем като към свой собствен. Нашият подход се основава на емпатия и откритост към Вашите потребности, което не само подобрява качеството на правните съвети, но е и ключът към изграждането на дългосрочна лоялност.
                                 </p>
-                            </div>
-                            
-                            <!-- Content Block 2 -->
-                            <div class="why-choose-us-block group">
-                                <div class="flex items-center mb-3">
-                                    <div class="w-10 h-10 rounded-lg bg-navy/5 flex items-center justify-center mr-3 group-hover:bg-burgundy/10 transition-all duration-300">
-                                        <svg class="w-5 h-5 text-navy group-hover:text-burgundy transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/>
-                                        </svg>
-                                    </div>
-                                    <div class="w-6 h-px bg-burgundy"></div>
-                                </div>
-                                <h3 class="text-lg md:text-xl font-bold text-black mb-2.5 group-hover:text-navy transition-colors">
-                                    Задълбочени познания и богата експертиза
-                                </h3>
-                                <p class="text-text-secondary text-sm leading-relaxed">
-                                    Опитът, натрупан през годините и високата степен на подготвеност в различни области на правото ни позволяват да предоставим комплексен и гъвкав подход, чрез който да постигнем начертаните цели. Благодарение на дългогодишната практика на нашия екип, реагираме с увереност на динамичната нормативна среда.
+                                <p class="text-text-secondary text-base md:text-lg leading-relaxed mt-6">
+                                    Опитът, натрупан през годините, и високата степен на подготвеност в различни области на правото ни позволяват да предоставим комплексен и гъвкав подход, чрез който да постигнем начертаните цели. Благодарение на дългогодишната практика на нашия екип, реагираме с увереност на динамичната нормативна среда.
                                 </p>
-                            </div>
-                            
-                            <!-- Content Block 3 -->
-                            <div class="why-choose-us-block group">
-                                <div class="flex items-center mb-3">
-                                    <div class="w-10 h-10 rounded-lg bg-navy/5 flex items-center justify-center mr-3 group-hover:bg-burgundy/10 transition-all duration-300">
-                                        <svg class="w-5 h-5 text-navy group-hover:text-burgundy transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/>
-                                        </svg>
-                                    </div>
-                                    <div class="w-6 h-px bg-burgundy"></div>
-                                </div>
-                                <h3 class="text-lg md:text-xl font-bold text-black mb-2.5 group-hover:text-navy transition-colors">
-                                    Непрестанен стремеж към надграждане
-                                </h3>
-                                <p class="text-text-secondary text-sm leading-relaxed">
-                                    Наясно сме, че развитието на правото в условията на глобализираща се и дигитализираща се икономика разкрива нови перспективи пред бизнеса и гражданите, което изисква от нас да се усъвършенстваме и постоянно да разширяваме знанията си. Стремим се да създадем общност, която да ни прави добри професионалисти.
-                                </p>
-                            </div>
-                            
-                            <!-- Content Block 4 -->
-                            <div class="why-choose-us-block group">
-                                <div class="flex items-center mb-3">
-                                    <div class="w-10 h-10 rounded-lg bg-navy/5 flex items-center justify-center mr-3 group-hover:bg-burgundy/10 transition-all duration-300">
-                                        <svg class="w-5 h-5 text-navy group-hover:text-burgundy transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.059 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
-                                        </svg>
-                                    </div>
-                                    <div class="w-6 h-px bg-burgundy"></div>
-                                </div>
-                                <h3 class="text-lg md:text-xl font-bold text-black mb-2.5 group-hover:text-navy transition-colors">
-                                    Екипност и взаимно уважение
-                                </h3>
-                                <p class="text-text-secondary text-sm leading-relaxed">
-                                    Установените партньорства и отлична комуникация в работата на екипа гарантират успешното протичане на отделните етапи при изпълнение на поетите ангажименти. В същото време силната екипна култура не само подхранва нашата креативност, но и ни помага да разбираме по-добре Вашите нужди.
-                                </p>
+                    
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Values Section -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <img src="https://via.placeholder.com/600x400/87ceeb/ffffff?text=Ferris+Wheel" alt="Values" class="h-96 w-full object-cover rounded-lg">
-                <div class="grid grid-cols-2 gap-6">
-                    <div>
-                        <h3 class="text-xl font-bold text-text-primary mb-3">Лична отговорност към клиенти</h3>
-                        <p class="text-text-secondary text-sm leading-relaxed">Всеки клиент получава индивидуален подход и пълно внимание към неговия случай.</p>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold text-text-primary mb-3">Задълбочени познания и висока експертиза</h3>
-                        <p class="text-text-secondary text-sm leading-relaxed">Нашият екип притежава дълбоки познания в различни области на правото.</p>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold text-text-primary mb-3">Непрекъснат стремеж към надграждане</h3>
-                        <p class="text-text-secondary text-sm leading-relaxed">Постоянно следваме промените в законодателството и подобряваме нашите услуги.</p>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold text-text-primary mb-3">Екипност и взаимно уважение</h3>
-                        <p class="text-text-secondary text-sm leading-relaxed">Работим като единен екип, като уважаваме всеки клиент и колега.</p>
                     </div>
                 </div>
             </div>
@@ -360,55 +318,51 @@
     <!-- Latest Publications Section -->
     <section class="py-20 bg-beige">
         <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-8 mb-12">
-                <div>
-                    <h2 class="text-4xl md:text-5xl font-bold text-text-primary mb-6">Последни публикации</h2>
-                </div>
-                <div>
-                    <p class="text-text-secondary text-lg leading-relaxed">
-                        Нашите адвокати редовно публикуват статии и анализи на актуални правни теми, за да ви информират за важни промени в законодателството и да ви помогнат да разберете по-добре вашите права.
-                    </p>
+            <div class="mb-12">
+                <div class="flex items-start">
+                    <div class="w-0.5 h-10 md:h-12 bg-burgundy mr-4 flex-shrink-0" style="width: 2px;"></div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-6">Последни публикации</h2>
                 </div>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Publication Card 1 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 publication-card">
-                    <img src="https://via.placeholder.com/400x200/4a5568/ffffff?text=Заповед+за+изпълнение" alt="Как да оспорим заповед за изпълнение?" class="h-48 w-full card-image">
-                    <div class="p-6">
+                <div class="bg-white rounded-lg overflow-hidden practice-card-custom flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=600&fit=crop" alt="Как да оспорим заповед за изпълнение?" class="w-full h-64 object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold text-text-primary mb-3">Как да оспорим заповед за изпълнение?</h3>
-                        <p class="text-text-secondary mb-4 text-sm leading-relaxed">Практически съвети за оспорване на заповеди за изпълнение и защита на вашите права.</p>
-                        <a href="#" class="text-burgundy font-semibold hover:text-burgundy-dark hover:underline inline-flex items-center">Прочети повече <span class="ml-1">→</span></a>
+                        <p class="text-text-secondary mb-4 text-sm leading-relaxed flex-grow">Практически съвети за оспорване на заповеди за изпълнение и защита на вашите права.</p>
+                        <a href="#" class="text-burgundy font-semibold hover:text-burgundy-dark hover:underline inline-flex items-center">Прочети повече</a>
                     </div>
                 </div>
                 
                 <!-- Publication Card 2 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 publication-card">
-                    <img src="https://via.placeholder.com/400x200/4a5568/ffffff?text=Трудов+договор" alt="Трудов договор при непълно работно време" class="h-48 w-full card-image">
-                    <div class="p-6">
+                <div class="bg-white rounded-lg overflow-hidden practice-card-custom flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=600&fit=crop" alt="Трудов договор при непълно работно време" class="w-full h-64 object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold text-text-primary mb-3">Трудов договор при непълно работно време</h3>
-                        <p class="text-text-secondary mb-4 text-sm leading-relaxed">Какви са правата и задълженията при сключване на трудов договор с непълно работно време.</p>
-                        <a href="#" class="text-burgundy font-semibold hover:text-burgundy-dark hover:underline inline-flex items-center">Прочети повече <span class="ml-1">→</span></a>
+                        <p class="text-text-secondary mb-4 text-sm leading-relaxed flex-grow">Какви са правата и задълженията при сключване на трудов договор с непълно работно време.</p>
+                        <a href="#" class="text-burgundy font-semibold hover:text-burgundy-dark hover:underline inline-flex items-center">Прочети повече</a>
                     </div>
                 </div>
                 
                 <!-- Publication Card 3 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 publication-card">
-                    <img src="https://via.placeholder.com/400x200/4a5568/ffffff?text=Безвъзмездна+помощ" alt="Безвъзмездна помощ" class="h-48 w-full card-image">
-                    <div class="p-6">
+                <div class="bg-white rounded-lg overflow-hidden practice-card-custom flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop" alt="Безвъзмездна помощ" class="w-full h-64 object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold text-text-primary mb-3">Безвъзмездна помощ: Правила за кандидатстване и отпускане на средства</h3>
-                        <p class="text-text-secondary mb-4 text-sm leading-relaxed">Пълна информация за процедурите по кандидатстване за безвъзмездна помощ от ЕС.</p>
-                        <a href="#" class="text-burgundy font-semibold hover:text-burgundy-dark hover:underline inline-flex items-center">Прочети повече <span class="ml-1">→</span></a>
+                        <p class="text-text-secondary mb-4 text-sm leading-relaxed flex-grow">Пълна информация за процедурите по кандидатстване за безвъзмездна помощ от ЕС.</p>
+                        <a href="#" class="text-burgundy font-semibold hover:text-burgundy-dark hover:underline inline-flex items-center">Прочети повече</a>
                     </div>
                 </div>
                 
                 <!-- Publication Card 4 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 publication-card">
-                    <img src="https://via.placeholder.com/400x200/4a5568/ffffff?text=Права+на+наследник" alt="Права на наследник върху недвижим имот" class="h-48 w-full card-image">
-                    <div class="p-6">
+                <div class="bg-white rounded-lg overflow-hidden practice-card-custom flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop" alt="Права на наследник върху недвижим имот" class="w-full h-64 object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold text-text-primary mb-3">Права на наследник върху недвижим имот</h3>
-                        <p class="text-text-secondary mb-4 text-sm leading-relaxed">Какви права има наследникът върху недвижими имоти и как да ги защити.</p>
-                        <a href="#" class="text-burgundy font-semibold hover:text-burgundy-dark hover:underline inline-flex items-center">Прочети повече <span class="ml-1">→</span></a>
+                        <p class="text-text-secondary mb-4 text-sm leading-relaxed flex-grow">Какви права има наследникът върху недвижими имоти и как да ги защити.</p>
+                        <a href="#" class="text-burgundy font-semibold hover:text-burgundy-dark hover:underline inline-flex items-center">Прочети повече</a>
                     </div>
                 </div>
             </div>
@@ -416,11 +370,12 @@
     </section>
 
     <!-- Consultation Form Section -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-6">
+    <section class="py-20 consultation-section relative overflow-hidden">
+        <div class="consultation-geometric-bg"></div>
+        <div class="container mx-auto px-6 relative z-10">
             <div class="grid md:grid-cols-2 gap-12">
                 <div>
-                    <h2 class="text-4xl md:text-5xl font-bold text-text-primary mb-6">Заявете консултация</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-6">Заявете консултация</h2>
                     <p class="text-text-secondary text-lg leading-relaxed">
                         Свържете се с нас днес и получите професионална правна консултация. Нашият екип е готов да ви помогне с всеки правен въпрос и да ви предостави най-доброто решение за вашия случай.
                     </p>
@@ -528,7 +483,6 @@
             <!-- Bottom Bar -->
             <div class="border-t border-navy-light pt-6 flex flex-col md:flex-row justify-between items-center text-sm">
                 <p>© 2023 Правна кантора. Всички права запазени.</p>
-                <p>Изработка на сайт от...</p>
             </div>
         </div>
     </footer>
@@ -564,6 +518,97 @@
 
             // Initial check
             handleScroll();
+        })();
+
+        // Mobile Menu Toggle
+        (function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+            const mobileMenuCloseIcon = document.getElementById('mobile-menu-close-icon');
+            const body = document.body;
+
+            if (!mobileMenuBtn || !mobileMenu) return;
+
+            // Toggle mobile menu
+            mobileMenuBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const isOpen = mobileMenu.classList.contains('mobile-menu-open');
+                
+                if (isOpen) {
+                    closeMobileMenu();
+                } else {
+                    openMobileMenu();
+                }
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (mobileMenu.classList.contains('mobile-menu-open')) {
+                    if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                        closeMobileMenu();
+                    }
+                }
+            });
+
+            // Close menu on escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && mobileMenu.classList.contains('mobile-menu-open')) {
+                    closeMobileMenu();
+                }
+            });
+
+            // Handle dropdown toggles in mobile menu
+            const dropdownToggles = document.querySelectorAll('.mobile-menu-dropdown-toggle');
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const dropdown = this.closest('.mobile-menu-dropdown');
+                    const content = dropdown.querySelector('.mobile-menu-dropdown-content');
+                    const icon = this.querySelector('svg');
+                    
+                    dropdown.classList.toggle('mobile-menu-dropdown-active');
+                    if (dropdown.classList.contains('mobile-menu-dropdown-active')) {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        icon.style.transform = 'rotate(180deg)';
+                    } else {
+                        content.style.maxHeight = '0';
+                        icon.style.transform = 'rotate(0deg)';
+                    }
+                });
+            });
+
+            function openMobileMenu() {
+                mobileMenu.classList.add('mobile-menu-open');
+                mobileMenuIcon.classList.add('hidden');
+                mobileMenuCloseIcon.classList.remove('hidden');
+                body.style.overflow = 'hidden';
+            }
+
+            function closeMobileMenu() {
+                mobileMenu.classList.remove('mobile-menu-open');
+                mobileMenuIcon.classList.remove('hidden');
+                mobileMenuCloseIcon.classList.add('hidden');
+                body.style.overflow = '';
+                
+                // Close all dropdowns
+                const dropdowns = document.querySelectorAll('.mobile-menu-dropdown');
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('mobile-menu-dropdown-active');
+                    const content = dropdown.querySelector('.mobile-menu-dropdown-content');
+                    const icon = dropdown.querySelector('.mobile-menu-dropdown-toggle svg');
+                    if (content) content.style.maxHeight = '0';
+                    if (icon) icon.style.transform = 'rotate(0deg)';
+                });
+            }
+
+            // Close menu on window resize if it exceeds lg breakpoint
+            window.addEventListener('resize', function() {
+                if (window.innerWidth >= 1024) {
+                    closeMobileMenu();
+                }
+            });
         })();
     </script>
 </body>
