@@ -224,6 +224,7 @@ header .logo-text {
 @media (max-width: 768px) {
     .hero-bg {
         padding-top: 120px;
+        background-attachment: scroll;
     }
 }
 
@@ -628,6 +629,29 @@ header .logo-text {
     flex-direction: column;
     gap: 0.5rem;
     overflow-y: auto;
+    position: relative;
+}
+
+.mobile-menu-close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5rem;
+    color: #1e293b;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.mobile-menu-close-button:hover {
+    background-color: #f8f9fa;
+    color: #8b2635;
 }
 
 .mobile-menu-container.mobile-menu-open .mobile-menu-nav {

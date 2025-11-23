@@ -91,7 +91,7 @@
                                 <span class="text-white font-bold text-lg md:text-xl">П</span>
                             </div>
                             <div class="flex flex-col">
-                                <div class="logo-text-new text-navy font-bold text-lg md:text-xl leading-tight">
+                                <div class="logo-text-new text-navy font-bold text-base md:text-xl leading-tight">
                                     Правна кантора
                                 </div>
                                 <div class="text-xs text-text-secondary hidden md:block">Правни решения за теб и твоята фирма</div>
@@ -149,6 +149,12 @@
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="lg:hidden mobile-menu-container">
                 <nav class="mobile-menu-nav">
+                    <!-- Close Button -->
+                    <button id="mobile-menu-close-btn" class="mobile-menu-close-button" aria-label="Close mobile menu">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
                     <a href="#" class="mobile-menu-link">ЗА КАНТОРАТА</a>
                     <div class="mobile-menu-dropdown">
                         <button class="mobile-menu-link mobile-menu-dropdown-toggle flex items-center justify-between w-full">
@@ -580,6 +586,7 @@
             const mobileMenu = document.getElementById('mobile-menu');
             const mobileMenuIcon = document.getElementById('mobile-menu-icon');
             const mobileMenuCloseIcon = document.getElementById('mobile-menu-close-icon');
+            const mobileMenuCloseBtn = document.getElementById('mobile-menu-close-btn');
             const body = document.body;
 
             if (!mobileMenuBtn || !mobileMenu) return;
@@ -595,6 +602,14 @@
                     openMobileMenu();
                 }
             });
+
+            // Close button inside mobile menu
+            if (mobileMenuCloseBtn) {
+                mobileMenuCloseBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    closeMobileMenu();
+                });
+            }
 
             // Close menu when clicking outside
             document.addEventListener('click', function(e) {
