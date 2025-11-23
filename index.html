@@ -128,7 +128,7 @@
                         
                         <!-- CTA Button -->
                         <div class="flex items-center space-x-4">
-                            <button class="header-cta-button-new bg-burgundy text-white px-4 md:px-6 py-2 md:py-2.5 rounded-md hover:bg-burgundy-dark transition-all duration-200 text-sm font-semibold shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                            <button id="contacts-btn-desktop" class="header-cta-button-new bg-burgundy text-white px-4 md:px-6 py-2 md:py-2.5 rounded-md hover:bg-burgundy-dark transition-all duration-200 text-sm font-semibold shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
                                 КОНТАКТИ
                             </button>
                             
@@ -179,7 +179,7 @@
                         </div>
                     </div>
                     <a href="#" class="mobile-menu-link">ПУБЛИКАЦИИ</a>
-                    <button class="mobile-menu-cta bg-burgundy text-white px-6 py-3 rounded-md hover:bg-burgundy-dark transition-all duration-200 text-sm font-semibold w-full mt-2">
+                    <button id="contacts-btn-mobile" class="mobile-menu-cta bg-burgundy text-white px-6 py-3 rounded-md hover:bg-burgundy-dark transition-all duration-200 text-sm font-semibold w-full mt-2">
                         КОНТАКТИ
                     </button>
                 </nav>
@@ -416,7 +416,7 @@
     </section>
 
     <!-- Consultation Form Section -->
-    <section class="py-20 consultation-section relative overflow-hidden">
+    <section id="contact-form" class="py-20 consultation-section relative overflow-hidden">
         <div class="consultation-geometric-bg"></div>
         <div class="container mx-auto px-6 relative z-10">
             <div class="grid md:grid-cols-2 gap-12">
@@ -678,6 +678,49 @@
                     closeMobileMenu();
                 }
             });
+        })();
+
+        // Smooth scroll to contact form
+        (function() {
+            const contactForm = document.getElementById('contact-form');
+            const contactsBtnDesktop = document.getElementById('contacts-btn-desktop');
+            const contactsBtnMobile = document.getElementById('contacts-btn-mobile');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            function scrollToContactForm() {
+                if (contactForm) {
+                    contactForm.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+
+            // Desktop button
+            if (contactsBtnDesktop) {
+                contactsBtnDesktop.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    scrollToContactForm();
+                });
+            }
+
+            // Mobile button
+            if (contactsBtnMobile) {
+                contactsBtnMobile.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // Close mobile menu if open
+                    if (mobileMenu && mobileMenu.classList.contains('mobile-menu-open')) {
+                        const closeBtn = document.getElementById('mobile-menu-close-btn');
+                        if (closeBtn) {
+                            closeBtn.click();
+                        }
+                    }
+                    // Small delay to allow menu to close before scrolling
+                    setTimeout(function() {
+                        scrollToContactForm();
+                    }, 100);
+                });
+            }
         })();
     </script>
 </body>
